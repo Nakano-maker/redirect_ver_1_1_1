@@ -9,7 +9,7 @@ app = Flask(__name__, static_folder="frontend")
 MAX_ACTIVE = 2500
 MAX_DIRECT = 50
 BATCH_SIZE = 25
-REDIRECT_URL = "https://glowsyncer-1-0-1.onrender.com/client/"  # 遷移先URL
+REDIRECT_URL = "https://growsyncer-1-0-2.onrender.com/client/"  # 遷移先URL
 TIMEOUT_MINUTES = 10
 
 # 状態管理
