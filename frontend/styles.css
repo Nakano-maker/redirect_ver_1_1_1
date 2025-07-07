@@ -1,0 +1,74 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* テキストを中央揃え */
+#status h1,
+#info p,
+#wait-number,
+#redirecting h2 {
+  text-align: center;
+  word-break: keep-all;
+}
+
+
+
+/* 全体のレイアウトを中央寄せに */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #000000;
+  text-align: center;
+  margin: 0;
+  padding: 40px;
+}
+
+/* ロゴ画像のサイズと余白 */
+#logo img {
+  width: 140px;
+  margin: 20px auto;
+}
+
+/* 時計スタイル */
+#clock {
+  font-size: 2.2em;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+/* 待機メッセージ */
+#info {
+  font-size: 1.2em;
+  color: #ffffff;
+  margin-top: 10px;
+}
+
+/* 待機番号表示 */
+#wait-number {
+  font-size: 1.8em;
+  color: #ffffff; /* Microsoftブルー風 */
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* リダイレクト中の表示 */
+#redirecting {
+  font-size: 1.4em;
+  color: #ff0000;
+  margin-top: 30px;
+}
+
+/* 入場制限のヘッダー */
+#status h1 {
+  font-size: 2em;
+  color: #CC3300;
+  margin-bottom: 10px;
+}
