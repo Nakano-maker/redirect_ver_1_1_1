@@ -1,6 +1,7 @@
 services:
   - type: web
-    name: redirect-system
+    name: redirect-access-gate
     env: python
-    startCommand: gunicorn app:app
     buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    rootDir: redirect_ver_1_1_1
