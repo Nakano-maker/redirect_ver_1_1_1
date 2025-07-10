@@ -89,12 +89,28 @@ if __name__ == "__main__":
 
 
 
-#ログ閲覧機能
+access_log = []  # 最新ログ最大400件保持
+LOG_LIMIT = 400
+
+user_id = request.remote_addr
+log_access(user_id, "/access")
+
+
+def log_access(user_id, endpoint):
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    entry = {"user": user_id, "endpoint": endpoint, "time": timestamp}
+    access_log.append(entry)
+
+    if len(access_log) > LOG_LIMIT:
+        access_log.pop(0)  # 古いログを削除（FIFO）
+
 
 @app.route("/status")
 def status_monitor():
-    cleanup_active_users()
-    return jsonify({
-        "active_users": list(active_users.keys()),
-        "waiting_queue": waiting_queue
-    })
+    log_access(request.remote_addr, "/status")
+    ...
+
+@app.route("/logs")
+def view_logs():
+    return jsonify(access_log)
+
