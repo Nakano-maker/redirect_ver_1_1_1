@@ -84,3 +84,17 @@ def access_handler():
 if __name__ == "__main__":
     print("Flaskサーバー起動中... http://localhost:5000/")
     app.run(debug=True)
+
+
+
+
+
+#ログ閲覧機能
+
+@app.route("/status")
+def status_monitor():
+    cleanup_active_users()
+    return jsonify({
+        "active_users": list(active_users.keys()),
+        "waiting_queue": waiting_queue
+    })
